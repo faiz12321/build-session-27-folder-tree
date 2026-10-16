@@ -1,0 +1,77 @@
+### CMD: python --version
+Python 3.12.10
+### EXIT: 0
+
+### CMD: python make_sample.py
+Created a new sample folder beside make_sample.py.
+It holds 7 made-up files in 3 folders.
+### EXIT: 0
+
+### CMD: python make_sample.py
+Stopped: sample already exists. Nothing was replaced or deleted.
+### EXIT: 1
+
+### CMD: python treeprint.py sample
+notes.txt
+photos
+reports
+todo.txt
+### EXIT: 0
+
+### CMD: python treeprint.py sample
+Folder tree
+Folder: sample
+
+notes.txt
+photos/
+  cat.jpg
+  dog.jpg
+  raw/
+    cat-01.png
+reports/
+  february.txt
+  january.txt
+todo.txt
+
+Folders: 3, files: 7
+### EXIT: 0
+
+### CMD: python treeprint.py sample/photos
+Folder tree
+Folder: sample/photos
+
+cat.jpg
+dog.jpg
+raw/
+  cat-01.png
+
+Folders: 1, files: 3
+### EXIT: 0
+
+### CMD: python -m unittest -v
+test_file_instead_of_folder_is_a_clear_error (test_treeprint.CliTests.test_file_instead_of_folder_is_a_clear_error) ... ok
+test_folder_defaults_to_current_folder (test_treeprint.CliTests.test_folder_defaults_to_current_folder) ... ok
+test_help_prints_usage (test_treeprint.CliTests.test_help_prints_usage) ... ok
+test_missing_folder_is_a_clear_error (test_treeprint.CliTests.test_missing_folder_is_a_clear_error) ... ok
+test_report_indents_the_tree (test_treeprint.CliTests.test_report_indents_the_tree) ... ok
+test_report_shows_folder_as_given (test_treeprint.CliTests.test_report_shows_folder_as_given) ... ok
+test_too_many_arguments_prints_usage (test_treeprint.CliTests.test_too_many_arguments_prints_usage) ... ok
+test_tool_does_not_change_the_tree (test_treeprint.CliTests.test_tool_does_not_change_the_tree) ... ok
+test_source_has_no_write_calls (test_treeprint.SafetyTests.test_source_has_no_write_calls) ... ok
+test_rerun_preserves_generated_folder_and_user_file (test_treeprint.SampleTests.test_rerun_preserves_generated_folder_and_user_file) ... ok
+test_sample_folder_matches_the_lesson_counts (test_treeprint.SampleTests.test_sample_folder_matches_the_lesson_counts) ... ok
+test_setup_refuses_existing_file (test_treeprint.SampleTests.test_setup_refuses_existing_file) ... ok
+test_setup_refuses_existing_folder_without_change (test_treeprint.SampleTests.test_setup_refuses_existing_folder_without_change) ... ok
+test_empty_folder_has_no_lines (test_treeprint.WalkTreeTests.test_empty_folder_has_no_lines) ... ok
+test_files_and_folders_are_counted (test_treeprint.WalkTreeTests.test_files_and_folders_are_counted) ... ok
+test_folder_names_end_with_a_slash (test_treeprint.WalkTreeTests.test_folder_names_end_with_a_slash) ... ok
+test_folders_appear_in_name_order_with_files (test_treeprint.WalkTreeTests.test_folders_appear_in_name_order_with_files) ... ok
+test_names_sort_letter_by_letter (test_treeprint.WalkTreeTests.test_names_sort_letter_by_letter) ... ok
+test_nested_folder_indents_one_more_level (test_treeprint.WalkTreeTests.test_nested_folder_indents_one_more_level) ... ok
+test_sorting_ignores_letter_case (test_treeprint.WalkTreeTests.test_sorting_ignores_letter_case) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.297s
+
+OK
+### EXIT: 0
