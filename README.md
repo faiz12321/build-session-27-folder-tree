@@ -1,44 +1,19 @@
-# Print a folder tree
+# Print a fictional folder tree
 
-Read-only teaching tool: print file and folder names with two-space indentation,
-sorted ignoring case. Names only, never file contents. Unreadable folders can
-be skipped. The report is not proof of completeness or deletion safety.
-
-## Link limitation
-
-The tree printer follows directory symlinks and junctions without cycle
-detection. Links can lead outside the chosen tree or repeat a loop. Use only
-the small link-free practice sample, not a real folder tree. This setup repair
-does not change link handling.
-
-## Practise
-
-Save all three files in a new empty lesson folder. Python 3 is required:
+Save three source files in a NEW empty lesson folder.
 
     python make_sample.py
     python treeprint.py sample
-    python treeprint.py sample/photos
     python -m unittest -v
 
-Setup creates sample beside its script and refuses any existing sample path.
-It never deletes, replaces or resets an old sample. Use a different new empty
-lesson folder if it refuses. Photo names contain fictional text practice bytes,
-not real photos.
+Two Windows and two Ubuntu full replays run exact visible source versions. Final 34 small fixture tests pass (Unix pipe skips on Windows); symlink creation can skip where unavailable. Displayed stdout is first Windows output, not normalized or mixed. Pair differences are unittest time.
+Link/error changes only: refuse root/ancestor and traversed tree symbolic links/reparse points, hardlinks, special entries and traversal before recursive visits. Read/list/metadata errors now stop with exit 2 instead of silent skips, false clean totals or alias loops. Setup refuses linked parents/traversal and existing sample paths, without reset or deletion. Naive first version remains fictional-sample-only and must be replaced.
+Original recursive folder shape, two-space indentation, mixed file/folder lowercased name ordering, relative root label and counts remain unchanged. Recursive implementation and case-tie behavior remain unchanged. Very deep trees can still reach Python's recursion limit, and large trees consume memory. No size/depth/time limit was added.
+The checker has no write/move/delete/network code and opens no file contents. No atomic snapshot or hostile-race defense. Stop editors/sync; entries can change during traversal. Filenames and paths can be private. Small fictional fixtures are not proof on every filesystem. No desktop Windows/macOS recording. Recorder removes only its own temporary fixture folder. Decisions and feedback are teaching text, not recorded output.
 
-## Evidence
+MIT code. Python separately licensed/not included.
 
-20 tests use temporary fixtures, including the sample-count test. They cover
-tree shape, sorted paths, CLI errors, unchanged source metadata, setup refusal
-for an existing file/folder, original bytes, a nested unrelated file and repeat
-run preservation. These limited fixture checks do not prove universal safety.
+Reference: https://docs.python.org/3/library/os.html
 
-The revised lesson was recorded twice on GitHub-hosted Windows and twice on
-Ubuntu. The driver saves the top-level list first, records it, then saves the
-final recursive tree printer, matching the lesson stages. Displayed output is
-the first Windows run. Paired platform runs differ only in unittest elapsed
-time. Versions and test rendering may differ. No Windows desktop or macOS
-session was tested.
-
-## License
-
-MIT (see LICENSE).
+Windows pair: https://github.com/faiz12321/lesson-lab/actions/runs/38975821494
+Ubuntu pair: https://github.com/faiz12321/lesson-lab/actions/runs/38975878430
